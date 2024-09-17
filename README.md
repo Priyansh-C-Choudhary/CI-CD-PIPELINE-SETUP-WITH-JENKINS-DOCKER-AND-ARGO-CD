@@ -19,6 +19,7 @@ Steps:
 Install Java
 
 ```
+sudo su -
 sudo apt update
 sudo apt install openjdk-17-jre
 ```
