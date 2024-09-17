@@ -198,19 +198,23 @@ kubectl get pods -n operators
 
 **Note: ** Now what are the different stages in a Jenkins Pipeline, they are nothing but the different blocks that we are trying to build using the pipeline.
 
-First is the Checkout Stage (which is not required in our case as our jenkins file is already in the scm, if it was not in the scm and written in Jenkins UI then we would need the checkout stage)
+First, Checkout Stage (which is not required in our case as our jenkins file is already in the scm, if it was not in the scm and written in Jenkins UI then we would need the checkout stage)
 
-Second is the Build and Test, as maven is already installed in the docker container we only need to run
+Second, Build and Test, as maven is already installed in the docker container we only need to run
 ```
 mvn clean package
 ```
 After executing the command, a target folder is created which stores the web archive file and the docker file is just configured to take the jar file and run it on port 8080
 
-Third is Static Code Analysis, we have configured sonar token and we will execute the static code analysis using the command:
+Third, Static Code Analysis, we have configured sonar token and we will execute the static code analysis using the command:
 ```
 mvn sonar:sonar -Dsonar.login=$Sonar_AUTH_TOKEN -Dsonar.host.url=${Sonar_URL}
 ```
 
-Fourth, we will be passing docker credentials, building the image and pushing to DockerHub using the ususal docker commands.
+Fourth, Docker Build and Push, we will be passing docker credentials, building the image and pushing to DockerHub using the ususal docker commands.
 
-Fifth, 
+Fifth, Update Deployment File, in this stage a shell script will be executed to to replace the image tag in deployment.yaml with with the currecnt build number/version number of the image. It requires github credential as we are then pushing the new deployment file to the scm.
+```
+sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" CI-CD-PIPELINE-SETUP-WITH-JENKINS-DOCKER-AND-ARGO-CD/spring-boot-app-manifests/deployment.yml
+```
+
