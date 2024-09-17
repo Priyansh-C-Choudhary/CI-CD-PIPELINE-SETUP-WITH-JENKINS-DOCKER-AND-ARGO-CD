@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/Priyansh-C-Choudhary/CI-CD-PIPELINE-SETUP-WITH-JENKINS-DOCKER-AND-ARGO-CD.git'
+        //git branch: 'main', url: 'https://github.com/Priyansh-C-Choudhary/CI-CD-PIPELINE-SETUP-WITH-JENKINS-DOCKER-ARGOCD.git'
       }
     }
     stage('Build and Test') {
@@ -54,7 +54,7 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "priyanshjproff@gmail.com"
-                    git config user.name "Priyansh Choudhary"
+                    git config user.name "Priyansh-C-Choudhary"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
