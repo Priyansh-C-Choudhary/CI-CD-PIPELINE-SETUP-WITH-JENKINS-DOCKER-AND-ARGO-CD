@@ -299,7 +299,7 @@ Add Inbound Rules for the exposed ports
 
 Execute the command:
 ```
-minikube service argocd-server
+minikube service example-argocd-server
 minikube service list
 ```
 
