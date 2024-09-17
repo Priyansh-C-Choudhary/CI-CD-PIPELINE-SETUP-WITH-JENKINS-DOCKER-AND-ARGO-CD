@@ -133,4 +133,29 @@ We use the abhishekf5/maven-abhishek-docker-agent:v1 image as the agent, it alre
 
 ![image](https://github.com/user-attachments/assets/69c64034-009c-4d9e-990e-79dcfbba6ad0)
 
+7. Install Minikube(K8) on the new instance
 
+Run the following commands:
+```
+sudo su -
+sudo apt update
+```
+
+### Install Docker
+```
+sudo apt install docker.io
+```
+
+### Install Minikube
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+```
+
+### Setup Minikube
+First Exit Root User and run these commands to install driver and give the permissions to group
+```
+sudo usermod -aG docker $USER && newgrp docker
+minikube start --driver=docker
+```
+![image](https://github.com/user-attachments/assets/8e027877-6079-4045-80b9-34a4bb236111)
