@@ -319,12 +319,31 @@ These commands create tunnels between the ArgoCD server service inside Minikube 
 ![image](https://github.com/user-attachments/assets/a6d20c43-b4a2-43dc-adfa-52d18105e00e)
 
 After running these commands, you can access the ArgoCD UI using the EC2 instance's public IP:
-
+```
 HTTP: http://<EC2_PUBLIC_IP>:32043
-
 HTTPS: https://<EC2_PUBLIC_IP>:32665
-
+```
 ![image](https://github.com/user-attachments/assets/97b00822-7450-4651-97d8-7bbc43baf0b3)
+
+Now Login to ArgoCD using admin as username and for password run the command:
+```
+kubectl get secret
+kubectl edit secret example-argocd-cluster
+```
+Copy the admin password and use it
+
+![image](https://github.com/user-attachments/assets/8440c9dc-9cfa-4174-bfc6-964e0097e4fc)
+
+Now decrypt it using:
+```
+echo <copied admin pass> | base64 -d
+```
+![image](https://github.com/user-attachments/assets/44f99e50-7bf0-4c2a-86b8-d84941d7aa49)
+
+Copy and login
+
+![image](https://github.com/user-attachments/assets/e8975ac1-1ffb-481a-ae83-4dd6831fd736)
+
 
 
 
