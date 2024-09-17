@@ -60,5 +60,9 @@ Login to Jenkins,
 - Enter the Administrator password
 - Click on Install suggested plugins
       
-3. 
+3. Write a pipeline
+New Item -> Pipeline (Grovy Scripting) -> Pipeline Configuration -> Pipeline script from SCM -> Add the Path
+
+![image](https://github.com/user-attachments/assets/c292fa87-56d4-45ec-ab76-9f950c445bf2)
+
 
