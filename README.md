@@ -69,10 +69,34 @@ Login to Jenkins,
 3. In Jenkins:
 
 New Item -> Pipeline (Grovy Scripting) -> Pipeline Configuration -> Pipeline script from SCM -> Add the Path
-
+abhishekf5/maven-abhishek-docker-agent:v1
 ![image](https://github.com/user-attachments/assets/c292fa87-56d4-45ec-ab76-9f950c445bf2)
 
 4. Use Docker Containers as Agent
 
 Reason: Traditionally, when using Jenkins, you would need multiple worker EC2 instances (agents) to handle various build and test jobs. These EC2 instances would often remain running and consume resources even when not in use. This approach leads to unnecessary costs and underutilized resources since EC2 instances are typically up and running continuously. Even if you use Jenkins auto-scaling with EC2 instances, there's still overhead involved. Each new EC2 instance would require configuration, such as installing the necessary tools, dependencies, and build environment settings. This process can be time-consuming and error-prone, especially when scaling up or down frequently. Hence using Docker as Agent is better as it ensures Dynamic provisioning, Resource efficiency, Fast Provisioning, Consistency, Scalability, Portability.
+
+### Install Docker Plugin
+![image](https://github.com/user-attachments/assets/e682cbd0-dd8d-40c1-a59b-01ac732a2633)
+ 
+We use the abhishekf5/maven-abhishek-docker-agent:v1 image as the agent, it already contains maven
+
+5. Install Sonarqube
+
+### Install the Sonarqube Plugin in Jenkins
+
+### Configure a Sonar Server
+
+```
+apt install unzip
+adduser sonarqube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+unzip *
+chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
+chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
+cd sonarqube-9.4.0.54424/bin/linux-x86-64/
+./sonar.sh start
+```
+
+Now access the `SonarQube Server` on `http://<ip-address>:9000` 
 
