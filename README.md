@@ -12,5 +12,11 @@ Steps:
 ![image](https://github.com/user-attachments/assets/418cb65f-c7d6-4744-84f6-ad09ccf1cc00)
 
 2. Install java and jenkins on it
+Add Inbound Trafic Rules
+Check if jenkins is running
+```
+ps -ef | grep jenkins
+```
 
+3. 
 
