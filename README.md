@@ -8,8 +8,9 @@ Requirements:
 Java application code hosted on a Git repository, Jenkins server, Kubernetes cluster, Helm package manager, Argo CD
 
 Steps:
-1. Create a t2.large Ubuntu Instance on AWS. (We will not be using a free teir resource as the jenkins server and sonarqube will be very resource intensive hencce we choose a t2.large instance)
-![image](https://github.com/user-attachments/assets/418cb65f-c7d6-4744-84f6-ad09ccf1cc00)
+1. Create a t2.large Ubuntu Instance on AWS, this will serve Jenkins, Maven, SonarQube, Docker. (We will not be using a free teir resource as the jenkins server and sonarqube will be very resource intensive hencce we choose a t2.large instance)
+![image](https://github.com/user-attachments/assets/833c7dce-6322-4a65-8c22-ddd6cbccee4d)
+
 
 2. Install Java and Jenkins
 
@@ -128,5 +129,8 @@ Reason: Traditionally, when using Jenkins, you would need multiple worker EC2 in
  
 We use the abhishekf5/maven-abhishek-docker-agent:v1 image as the agent, it already contains maven
 
+6. Create a t2.large Ubuntu Instance on AWS, this will serve MiniQube and ArgoCD.
+
+![image](https://github.com/user-attachments/assets/69c64034-009c-4d9e-990e-79dcfbba6ad0)
 
 
