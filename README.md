@@ -204,4 +204,13 @@ Second is the Build and Test, as maven is already installed in the docker contai
 ```
 mvn clean package
 ```
+After executing the command, a target folder is created which stores the web archive file and the docker file is just configured to take the jar file and run it on port 8080
 
+Third is Static Code Analysis, we have configured sonar token and we will execute the static code analysis using the command:
+```
+mvn sonar:sonar -Dsonar.login=$Sonar_AUTH_TOKEN -Dsonar.host.url=${Sonar_URL}
+```
+
+Fourth, we will be passing docker credentials, building the image and pushing to DockerHub using the ususal docker commands.
+
+Fifth, 
