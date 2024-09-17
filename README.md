@@ -70,7 +70,7 @@ Login to Jenkins,
 3. In Jenkins:
 
 New Item -> Pipeline (Grovy Scripting) -> Pipeline Configuration -> Pipeline script from SCM -> Add the Path
-abhishekf5/maven-abhishek-docker-agent:v1
+
 ![image](https://github.com/user-attachments/assets/c292fa87-56d4-45ec-ab76-9f950c445bf2)
 
 4. Install Sonarqube
