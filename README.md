@@ -97,7 +97,27 @@ Generate a Sonarqube token through My Account -> Security -> Generate Token -> C
 
 5. Install Docker
 
+Logout and go to root user and use the command:
 
+```
+sudo apt install docker.io
+```
+### Grant Jenkins user and Ubuntu user permission to docker deamon.
+
+```
+sudo su - 
+usermod -aG docker jenkins
+usermod -aG docker ubuntu
+systemctl restart docker
+```
+
+Once you are done with the above steps, it is better to restart Jenkins.
+
+```
+http://<ec2-instance-public-ip>:8080/restart
+```
+
+The docker agent configuration is now successful.
 
 **Note: ** Use Docker Containers as Agent
 
