@@ -11,7 +11,7 @@ Steps:
 1. Create a t2.large Ubuntu Instance on AWS. (We will not be using a free teir resource as the jenkins server and sonarqube will be very resource intensive hencce we choose a t2.large instance)
 ![image](https://github.com/user-attachments/assets/418cb65f-c7d6-4744-84f6-ad09ccf1cc00)
 
-2. Install java and jenkins on it
+2. Install Java and Jenkins
 
 ### Run the below commands to install Java and Jenkins
 
@@ -53,9 +53,12 @@ ps -ef | grep jenkins
 ```
 
 Login to Jenkins, 
-      - Run the command to copy the Jenkins Admin Password - `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
-      - Enter the Administrator password
-      - Click on Install suggested plugins
+- Run the command to copy the Jenkins Admin Password - 
+```
+ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+- Enter the Administrator password
+- Click on Install suggested plugins
       
 3. 
 
