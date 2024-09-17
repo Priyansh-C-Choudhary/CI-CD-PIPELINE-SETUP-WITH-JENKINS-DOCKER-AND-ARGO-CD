@@ -222,3 +222,8 @@ sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" CI-CD-PIPELINE-SETUP-WITH-JENKINS-D
 
 Add the credentials in the same way we added the SonarQube credentials
 ![image](https://github.com/user-attachments/assets/191e9d61-28b0-40b3-972a-6e5b4ce1c4eb)
+
+10. Run The CI Pipeline (Without the ArgoCD Part)
+
+![image](https://github.com/user-attachments/assets/269ede1d-f1d1-45d5-b907-53bd74821cb6)
+
