@@ -102,3 +102,5 @@ cd sonarqube-9.4.0.54424/bin/linux-x86-64/
 
 Now access the `SonarQube Server` on `http://<ip-address>:9000` 
 
+Generate a Sonarqube token through My Account -> Security -> Generate Token -> Copy -> Move to Jenkins -> Manage Credentails -> System -> Global Crdentails -> add credentails -> Secret Text -> Paste the token
+
