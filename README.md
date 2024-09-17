@@ -344,6 +344,32 @@ Copy and login
 
 ![image](https://github.com/user-attachments/assets/e8975ac1-1ffb-481a-ae83-4dd6831fd736)
 
+### Deployment
 
+Create Application
 
+![image](https://github.com/user-attachments/assets/affcd7bd-cab6-47c6-9566-17552b3cd6c5)
 
+Then provide the URL
+
+![image](https://github.com/user-attachments/assets/f6f2f76a-7878-4808-89ba-c7e39cf521ff)
+(Edit: No need to write Deployment.yaml in the path)
+(Edit: Under namespace add default)
+
+And click on create
+
+![image](https://github.com/user-attachments/assets/dec04c1a-dab6-423e-bf1b-7e1c08e59231)
+
+Your application is created
+
+![image](https://github.com/user-attachments/assets/a1d103bf-a3d0-4797-ab74-667c73038b69)
+
+To Check:
+```
+kubectl get deploy
+```
+
+**Note: ** ArgoCD offers several key advantages, including automatic synchronization of application changes from Git repositories, ensuring Kubernetes deployments are always up-to-date with the desired state. It employs a declarative approach, simplifying application management through GitOps principles. It also protects against malicious users by enforcing strict RBAC (Role-Based Access Control) policies and integrating with security tools to ensure only authorized users can make changes, thereby securing the deployment process.
+
+![image](https://github.com/user-attachments/assets/56a86906-54ee-4ca0-91ab-a10fedca3309)
+ 
