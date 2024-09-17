@@ -72,4 +72,7 @@ New Item -> Pipeline (Grovy Scripting) -> Pipeline Configuration -> Pipeline scr
 
 ![image](https://github.com/user-attachments/assets/c292fa87-56d4-45ec-ab76-9f950c445bf2)
 
+4. Use Docker Containers as Agent
+
+Reason: Traditionally, when using Jenkins, you would need multiple worker EC2 instances (agents) to handle various build and test jobs. These EC2 instances would often remain running and consume resources even when not in use. This approach leads to unnecessary costs and underutilized resources since EC2 instances are typically up and running continuously. Even if you use Jenkins auto-scaling with EC2 instances, there's still overhead involved. Each new EC2 instance would require configuration, such as installing the necessary tools, dependencies, and build environment settings. This process can be time-consuming and error-prone, especially when scaling up or down frequently. Hence using Docker as Agent is better as it ensures Dynamic provisioning, Resource efficiency, Fast Provisioning, Consistency, Scalability, Portability.
 
