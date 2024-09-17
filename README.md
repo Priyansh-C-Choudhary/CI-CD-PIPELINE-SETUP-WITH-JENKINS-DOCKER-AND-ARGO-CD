@@ -178,19 +178,19 @@ Install Operator Lifecycle Manager (OLM), a tool to help manage the Operators ru
 ```
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.28.0/install.sh | bash -s v0.28.0
 ```
+This is one time for an instance
 ![image](https://github.com/user-attachments/assets/4381ccbc-7674-46ce-a15f-cf4f98137c48)
 
-Install the operator by running the following command:What happens when I execute this command?
+Install the operator by running the following command:
 ```
 kubectl create -f https://operatorhub.io/install/argocd-operator.yaml
 ```
-This Operator will be installed in the "operators" namespace and will be usable from all namespaces in the cluster.
+This Operator will be installed in the "operators" namespace and will be usable from all namespaces in the cluster. (This basically installs the ArgoCD Operator)
 
 
-After install, watch your operator come up using next command.
+Verify the install using this:
 ```
 kubectl get csv -n operators
 ```
-To use it, checkout the custom resource definitions (CRDs) introduced by this operator to start using it.
 
 
