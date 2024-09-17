@@ -159,3 +159,36 @@ sudo usermod -aG docker $USER && newgrp docker
 minikube start --driver=docker
 ```
 ![image](https://github.com/user-attachments/assets/8e027877-6079-4045-80b9-34a4bb236111)
+
+### Install Kubectl
+```
+sudo snap install kubectl --classic
+```
+
+8. Installing Kubernetes Controller(ArgoCD) through Operators
+
+**Note: ** Installing Kubernetes Controllers through Operators is a best practice because Operators automate the management and lifecycle of Kubernetes controllers/applications, including deployment, scaling, upgrading, and recovery. Operators provide automated management of controllers, handling installation, upgrades, configuration changes, and health monitoring without manual intervention. We will use operatorhub.io 
+
+### Install ArgoCD Operator
+
+![image](https://github.com/user-attachments/assets/8f37780a-5be5-4b03-b39d-18a2a03d3d56)
+
+
+Install Operator Lifecycle Manager (OLM), a tool to help manage the Operators running on your cluster.
+```
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.28.0/install.sh | bash -s v0.28.0
+```
+
+Install the operator by running the following command:What happens when I execute this command?
+```
+kubectl create -f https://operatorhub.io/install/argocd-operator.yaml
+```
+This Operator will be installed in the "operators" namespace and will be usable from all namespaces in the cluster.
+
+
+After install, watch your operator come up using next command.
+```
+kubectl get csv -n operators
+```
+To use it, checkout the custom resource definitions (CRDs) introduced by this operator to start using it.
+
