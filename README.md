@@ -85,6 +85,8 @@ We use the abhishekf5/maven-abhishek-docker-agent:v1 image as the agent, it alre
 
 ### Install the Sonarqube Plugin in Jenkins
 
+![image](https://github.com/user-attachments/assets/cbde73da-0dd5-4c6d-b5f7-d4a09a5b7b1c)
+
 ### Configure a Sonar Server
 
 ```
