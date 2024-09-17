@@ -228,3 +228,83 @@ Add the credentials in the same way we added the SonarQube credentials
 10. Run The CI Pipeline (Without the ArgoCD Part)
 
 ![image](https://github.com/user-attachments/assets/c80fa9d1-2252-4ad4-92c8-9f5178ca1b67)
+
+11. Deployment thorough ArgoCD
+
+### Setting up ArgoCD Workloads
+Check Minikube status
+```
+minikube status
+```
+![image](https://github.com/user-attachments/assets/3f3f6303-3035-4291-92c6-b5f9152d9735)
+
+Go to ArgoCD Operator Documentation
+```
+https://argocd-operator.readthedocs.io/en/latest/
+```
+Go to usage -> Basics
+
+![image](https://github.com/user-attachments/assets/f2fca86e-c0e2-4865-90ae-8e0c5e64dc91)
+
+Create a yaml file: argocd-basic.yaml file (We are trying to create the ArgoCD Controller)
+```
+vim argocd-basic.yaml
+```
+and copy paste the basic code:
+```
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: example-argocd
+  labels:
+    example: basic
+spec: {}
+```
+and apply command:
+```
+kubectl apply -f argocd-basic.yaml
+kubectl get pods
+```
+![image](https://github.com/user-attachments/assets/d07f1483-2183-4d40-af58-8f50ec5f6685)
+
+Now the ArgoCD workloads are created
+
+### Accesing the Workloads
+
+To access the workloads(on browser):
+```
+kubectl get svc
+```
+![image](https://github.com/user-attachments/assets/16626173-deb6-4bb3-aceb-a9684916b1a3)
+
+The ```example-argocd-server``` is responisble for the ArgoCD UI
+
+Now to Access this:
+```
+kubectl edit svc example-argocd-server
+```
+
+and edit type from ClusterIP to NodePort
+
+![image](https://github.com/user-attachments/assets/1b1a6401-4ab0-4113-8613-1e20ffd8a1db)
+
+Now we can see that example-argocd-server has changed to NodePort mode
+
+![image](https://github.com/user-attachments/assets/6d8f4f48-4056-4d7a-ab30-64062e665113)
+
+Add Inbound Rules for the exposed ports
+
+![image](https://github.com/user-attachments/assets/d0aa5227-53c7-4062-a196-8f82b53d4149)
+
+
+Execute the command:
+```
+minikube service argocd-server
+minikube service list
+```
+
+![image](https://github.com/user-attachments/assets/5e918114-7634-409a-b35f-fd4ad06d30cb)
+
+Now 
+
+
