@@ -190,7 +190,7 @@ This Operator will be installed in the "operators" namespace and will be usable 
 
 Verify the install using this:
 ```
-kubectl get csv -n operators
+kubectl get pods -n operators
 ```
 
 
