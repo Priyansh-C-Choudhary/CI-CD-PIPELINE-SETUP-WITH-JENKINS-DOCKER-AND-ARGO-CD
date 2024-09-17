@@ -305,6 +305,26 @@ minikube service list
 
 ![image](https://github.com/user-attachments/assets/5e918114-7634-409a-b35f-fd4ad06d30cb)
 
-Now 
+**Note: ** When running Minikube inside an EC2 instance, services deployed within Minikube are not directly accessible from outside the EC2 instance. This is because Minikube runs as a separate VM inside the EC2 instance, with its own internal network. Port forwarding is needed to expose the ArgoCD UI service running inside Minikube to the EC2 instance's public IP. Without port forwarding, the service would remain inaccessible from outside the EC2 instance.
+
+### Access ArgoCD UI
+Run the following commands on the instance to forward the traffic:
+```
+kubectl port-forward --address 0.0.0.0 svc/example-argocd-server 32043:80 &
+kubectl port-forward --address 0.0.0.0 svc/example-argocd-server 32665:443 &
+
+```
+These commands create tunnels between the ArgoCD server service inside Minikube and the EC2 instance's public IP.
+
+![image](https://github.com/user-attachments/assets/a6d20c43-b4a2-43dc-adfa-52d18105e00e)
+
+After running these commands, you can access the ArgoCD UI using the EC2 instance's public IP:
+
+HTTP: http://<EC2_PUBLIC_IP>:32043
+
+HTTPS: https://<EC2_PUBLIC_IP>:32665
+
+![image](https://github.com/user-attachments/assets/97b00822-7450-4651-97d8-7bbc43baf0b3)
+
 
 
