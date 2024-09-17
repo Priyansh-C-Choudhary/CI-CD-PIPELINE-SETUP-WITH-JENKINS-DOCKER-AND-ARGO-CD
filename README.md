@@ -229,3 +229,4 @@ Add the credentials in the same way we added the SonarQube credentials
 
 ![image](https://github.com/user-attachments/assets/269ede1d-f1d1-45d5-b907-53bd74821cb6)
 
+![image](https://github.com/user-attachments/assets/c80fa9d1-2252-4ad4-92c8-9f5178ca1b67)
