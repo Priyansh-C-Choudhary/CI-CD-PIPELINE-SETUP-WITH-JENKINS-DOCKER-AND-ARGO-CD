@@ -218,7 +218,7 @@ Fifth, Update Deployment File, in this stage a shell script will be executed to 
 sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" CI-CD-PIPELINE-SETUP-WITH-JENKINS-DOCKER-AND-ARGO-CD/spring-boot-app-manifests/deployment.yml
 ```
 
-### Add Docker and Github Credentials
+### Add Docker and GitHub Credentials
 
 Add the credentials in the same way we added the SonarQube credentials
 ![image](https://github.com/user-attachments/assets/191e9d61-28b0-40b3-972a-6e5b4ce1c4eb)
