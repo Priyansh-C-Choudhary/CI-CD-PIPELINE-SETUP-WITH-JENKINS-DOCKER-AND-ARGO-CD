@@ -192,5 +192,6 @@ Verify the install using this:
 ```
 kubectl get pods -n operators
 ```
+![image](https://github.com/user-attachments/assets/7e71628e-3b10-45d4-be3b-4c65d8f0f51d)
 
 
