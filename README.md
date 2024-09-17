@@ -1,2 +1,4 @@
 # CI-CD-PIPELINE-SETUP-WITH-JENKINS-DOCKER-AND-ARGO-CD
-![image](https://github.com/user-attachments/assets/6227e739-d9ae-4b33-a734-eda597ac9d85)
+
+![New Microsoft PowerPoint Presentation](https://github.com/user-attachments/assets/dec01c09-8e5d-4861-9c5a-26e1114a86b7)
+
