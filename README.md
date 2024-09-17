@@ -178,6 +178,7 @@ Install Operator Lifecycle Manager (OLM), a tool to help manage the Operators ru
 ```
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.28.0/install.sh | bash -s v0.28.0
 ```
+![image](https://github.com/user-attachments/assets/4381ccbc-7674-46ce-a15f-cf4f98137c48)
 
 Install the operator by running the following command:What happens when I execute this command?
 ```
@@ -191,4 +192,5 @@ After install, watch your operator come up using next command.
 kubectl get csv -n operators
 ```
 To use it, checkout the custom resource definitions (CRDs) introduced by this operator to start using it.
+
 
