@@ -194,4 +194,14 @@ kubectl get pods -n operators
 ```
 ![image](https://github.com/user-attachments/assets/7e71628e-3b10-45d4-be3b-4c65d8f0f51d)
 
+9. Make the Jenkins File/Pipeline
+
+**Note: ** Now what are the different stages in a Jenkins Pipeline, they are nothing but the different blocks that we are trying to build using the pipeline.
+
+First is the Checkout Stage (which is not required in our case as our jenkins file is already in the scm, if it was not in the scm and written in Jenkins UI then we would need the checkout stage)
+
+Second is the Build and Test, as maven is already installed in the docker container we only need to run
+```
+mvn clean package
+```
 
