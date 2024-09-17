@@ -7,3 +7,6 @@ Here are the step-by-step details to set up an end-to-end Jenkins pipeline for a
 Requirements:
 Java application code hosted on a Git repository, Jenkins server, Kubernetes cluster, Helm package manager, Argo CD
 
+Steps:
+1. Create a t2.large Ubuntu Instance on AWS. (We will not be using a free teir resource as the jenkins server and sonarqube will be very resource intensive hencce we choose a t2.large instance)
+2. 
